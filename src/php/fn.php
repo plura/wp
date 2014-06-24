@@ -164,6 +164,7 @@ function parray2json($a){
 		
 		//format the key
 		if(is_numeric($key))	$key = '"key_' . $key . '"';
+		
 		else					$key = '"' . $key . '"';
 		
 		//format the value

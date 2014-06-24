@@ -1,10 +1,10 @@
 <?php
 
-define(PWP_TEMPLATE_DIR, dirname(__FILE__) . '/../');
+define( PWP_TEMPLATE_DIR, dirname( __FILE__ ) . "/../" );
 
-define(PWP_TEMPLATE_URL, get_bloginfo('template_directory') . "/");
+define( PWP_TEMPLATE_URL, get_bloginfo('template_directory') . "/" );
 
-define(PWP_URL, get_bloginfo('template_directory') . "/" . basename( dirname( __FILE__ ) ) . "/" );
+define( PWP_URL, get_bloginfo('template_directory') . "/" . basename( dirname( __FILE__ ) ) . "/" );
 
 
 
@@ -17,8 +17,9 @@ WERE ADDED HACKED FUNCTION TO DISABLE "CATEGORY/" */
 
 $URL_INDEX	= substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/")+1);
 
-include("php/pwp.fn.php");
-include("php/pwp.js.php");
+include("php/functions/wp.php");
+include("php/includes/js.php");
+
 ?>
 <!--***********************************
 

@@ -40,15 +40,25 @@ function phplist_add($data=NULL, $config=NULL){
 	$config		= !is_null($config)? array_merge($config_defaults, $config) : $config_defaults;
 	
 	if(!function_exists('curl_exec')){
+
 		$return_msg	.= is_null($config['msg_error'])? $config['msg_error_curl'] 	: $config['msg_error'];
+	
 	} else if(is_null($data)){ 
+
 		$return_msg .= is_null($config['msg_error'])? $config['msg_error_data_null']: $config['msg_error'];
+	
 	} else if(!is_array($data)){ 
+		
 		$return_msg .= is_null($config['msg_error'])? $config['msg_error_data_type']: $config['msg_error'];	
+	
 	} else if(empty($data['email'])){
+		
 		$return_msg .= is_null($config['msg_error'])? $config['msg_error_mail_null']: $config['msg_error'];
+	
 	} else if(!isset($data['lists'])){
+		
 		$return_msg .= is_null($config['msg_error'])? $config['msg_error_list_null']: $config['msg_error'];
+	
 	} else {	
 	
 		//Login to phplist as admin and save cookie using CURLOPT_COOKIEFILE 
@@ -68,14 +78,19 @@ function phplist_add($data=NULL, $config=NULL){
 		$result						= curl_exec($ch); 
 		//echo("Result was: $result"); //debug 
 		if(curl_errno($ch)){ 
+			
 			$return_msg .= $data['msg_error_signin']; 
+		
 		} else { 
 		
 			$post_data = array_merge($data_defaults, $data);
 		
 			foreach(explode(',', $data['lists']) as $key=>$value){
+				
 				$k 				= "list[" . $value . "]";
+				
 				$post_data[$k]	= "signup";
+			
 			}
 
 			//simulate post to subscriber form.
@@ -90,16 +105,23 @@ function phplist_add($data=NULL, $config=NULL){
 
 			//echo('Result was: ' .$result); 
 			if(curl_errno($ch)){ 
+				
 				$return_msg .= $config['msg_error_add']; 
+			
 			} else {
+				
 				$return_msg .= $config['msg_success'];		
+			
 			}
+		
 		}
 
 		//) Clean up 
 		curl_close($ch);
+	
 	}
 
 	return $return_msg;
 }
+
 ?>

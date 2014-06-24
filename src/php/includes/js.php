@@ -1,5 +1,4 @@
 <?php
-include_once('fn.php');
 
 //urlencoding some strings is necessary because explorer's incapacity [doh] of [sometimes] correctly reading json
 
@@ -14,8 +13,8 @@ var pwp_index 			= "<?php //print $URL_INDEX; ?>",//"http://" . $_SERVER['HTTP_H
 	//pwp_root			= "<?php print preg_replace('/\\\/','/', realpath('.')); ?>",
 	pwp_root 			= "<?php print get_bloginfo('url') . "/"; ?>",
 	pwp_dir 			= "<?php print PWP_URL; ?>",
-	pwp_front_page		= <?php	 print (is_front_page()? 'true' : 'false'); ?>,
-	pwp_lang			= <?php  print function_exists('qtrans_getLanguage')? "'".qtrans_getLanguage() . "'" : 'null'; ?>,
+	pwp_front_page		= <?php	 print (is_front_page() ? 'true' : 'false'); ?>,
+	pwp_lang			= <?php  print function_exists('qtrans_getLanguage')? "'". qtrans_getLanguage() . "'" : 'null'; ?>,
 	pwp_permalinks		= <?php print pwp_use_permalinks()? "true" : "false";		?>,
 	pwp_template_dir	= "<?php print get_bloginfo('template_directory') . "/";	?>",
 	pwp_selected		= {

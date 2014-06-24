@@ -4,7 +4,7 @@
  	PLURA_WORDPRESS FUNCTIONS	*
  
 *	*	*	*	*	*	*	*	*/
-include_once('pwp.fn.refresh.php');
+include_once('wp-refresh.php');
 
 
 //remove and use pwp_get_parents//isabelsantos
