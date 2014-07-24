@@ -1,1 +1,0 @@
-You can find the language localizations hosted here: http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/i18n/jquery-ui-i18n.min.js

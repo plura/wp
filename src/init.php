@@ -30,22 +30,13 @@ include("php/includes/js.php");
 ****************************************-->
 
 <!-- Plura™: EXTERNAL JS -->
-<script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/jquery-ui-1.10.3.custom.min.js"></script>
-<script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/jquery-ui-i18n.min.js"></script>
-<link rel="stylesheet" href="<?php echo PWP_URL; ?>js/external/jquery-ui/smoothness/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+<script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/jquery-ui/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="<?php echo PWP_URL; ?>js/external/jquery-ui/jquery-ui.min.css" type="text/css" />
 <script type="text/javascript" src="<?php echo PWP_URL; ?>js/external/swfobject.js"></script>
 
-<?php if(file_exists( PWP_TEMPLATE_DIR . "/_content/developer.exclude.php")) {
-
-	include(PWP_TEMPLATE_DIR . "/_content/developer.exclude.php"); 
-
-} else { ?>
 
 <script type="text/javascript" src="<?php echo PWP_URL; ?>js/p.js"></script>
-
-<?php } ?>
-
 <script type="text/javascript" src="<?php echo PWP_URL; ?>js/p.others.js"></script>
 <script type="text/javascript" src="<?php echo PWP_URL; ?>js/p.wp.js"></script>
 
@@ -82,7 +73,11 @@ if( file_exists( PWP_TEMPLATE_DIR . "/_content/scripts.js" ) ) { ?>
 
 <?php } ?>
 
-<?php if ( file_exists( PWP_TEMPLATE_DIR . "/_content/header.php" ) ) { 
+<?php if ( file_exists( PWP_TEMPLATE_DIR . "/_content/header.dev.php" ) ) { 
+
+	include(PWP_TEMPLATE_DIR . "/_content/header.dev.php"); 
+
+} elseif (file_exists( PWP_TEMPLATE_DIR . "/_content/header.php" ) ) {
 
 	include(PWP_TEMPLATE_DIR . "/_content/header.php"); 
 	
