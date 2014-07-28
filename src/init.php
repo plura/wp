@@ -73,13 +73,13 @@ if( file_exists( PWP_TEMPLATE_DIR . "/_content/scripts.js" ) ) { ?>
 
 <?php } ?>
 
-<?php if ( file_exists( PWP_TEMPLATE_DIR . "/_content/header.dev.php" ) ) { 
+<?php if ( file_exists( PWP_TEMPLATE_DIR . "/_content/head.dev.php" ) ) { 
 
-	include(PWP_TEMPLATE_DIR . "/_content/header.dev.php"); 
+	include(PWP_TEMPLATE_DIR . "/_content/head.dev.php"); 
 
-} elseif (file_exists( PWP_TEMPLATE_DIR . "/_content/header.php" ) ) {
+} elseif (file_exists( PWP_TEMPLATE_DIR . "/_content/head.php" ) ) {
 
-	include(PWP_TEMPLATE_DIR . "/_content/header.php"); 
+	include(PWP_TEMPLATE_DIR . "/_content/head.php"); 
 	
 }
 

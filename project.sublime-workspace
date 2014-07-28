@@ -1,0 +1,550 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dir",
+				"dirname"
+			],
+			[
+				"ta",
+				"target"
+			],
+			[
+				"con",
+				"concept"
+			],
+			[
+				"enviro",
+				"enviro_switch"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"ba",
+				"background-size"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"e",
+				"environment"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"o",
+				"objs"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"text",
+				"text_h"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"it",
+				"items"
+			],
+			[
+				"for",
+				"format_data"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"i",
+				"ife	if … else"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/init.php",
+			"settings":
+			{
+				"buffer_size": 4046,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"lin",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sublinter",
+				"SublimeLinter: Enable Linting"
+			],
+			[
+				"sublimelinter",
+				"SublimeLinter: Choose Mark Style"
+			],
+			[
+				"lint ",
+				"SublimeLinter: Enable Linting"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"emmet",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax J",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 120.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Plura/dev/code/wp/project.sublime-project",
+		"/C/Plura/dev/code/js/project.sublime-project",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/pwp/js/external/jquery-ui/jquery-ui.min.css",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/pwp/error_log",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/content-page.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/process/process.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/process/sidebar2.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/_content/header.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/footer.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/_content/header.dev.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/sgl.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/css/custom3.css",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/modules/Contacts.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/layout/Refresh.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/layout/Banner.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/css/colors.css",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/modules/Home.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/js/core/modules/Library.js",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/plura_www_socgeografialisboa_pt_2014/_content/header.php",
+		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/_content/stats.php",
+		"/C/Plura/dev/sites/2013/ohmm/ohmm.sublime-project",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/_content/scripts.min.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/_content/scripts.dev.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/js/modules/checkout/Houses.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/js/modules/Concept.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/fn/functions.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/process/core_houses.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/js/ohmm.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/js/modules/checkout/Services.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/js/modules/Houses.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/checkout/Houses.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/concept/Presentation.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/process/core_partners.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/process/core_services_init.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/style.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/css/colors.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/css/fonts.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/content-page.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/css/colors.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/Checkout.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/checkout/Services.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/Contacts.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/Concept.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/concept/Content.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/process.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/constants/Labels.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/includes/menu_main.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm/header.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/header.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/plugins/ohmm/ohmm-houses.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/plugins/ohmm/ohmm.php",
+		"/C/Plura/dev/sites/2014/pbcm/project.sublime-project",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/css/transitions.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/ohmm.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/Home.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/layout/resize/ResizeManager.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/process/core_services_init.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/process/core_services_process.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/houses/House.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/Houses.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/layout/resize/ResizeToggle.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/plugins/ohmm/styles.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/plugins/ohmm/ohmm-services.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-admin/options-head.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-admin/options.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/temp/index1/css/styles.css",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-admin/network/site-themes.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-includes/shortcodes.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/checkout/services/Select.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_lib/js/p.js",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-includes/SimplePie/Restriction.php",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/plugins/responsive-add-ons/languages/responsive-addons-el.mo",
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/readme.html",
+		"/C/Plura/dev/code/js/p.js/test/p.js",
+		"/C/Plura/dev/code/js/p.js/src/layout/Slideshow.js",
+		"/C/Plura/dev/code/js/p.js/test/p.sublime-project",
+		"/C/Plura/dev/code/js/p.js/test/p.js.sublime-project",
+		"/C/Plura/dev/code/js/trash.js",
+		"/C/Plura/dev/code/js/p.js/src/constants.js",
+		"/C/Plura/dev/code/js/p.js/include/tinymce.3.5.10/themes/advanced/skins/o2k7/ui_black.css",
+		"/C/Plura/dev/code/js/p.js/src/form/Upload.js",
+		"/C/Plura/dev/code/js/p.js/include/swfobject.js",
+		"/C/Plura/dev/code/js/p.js/include/tinymce.3.5.10/plugins/advlink/link.htm",
+		"/C/Plura/dev/code/js/p.js/include/tinymce/license.txt",
+		"/C/Plura/dev/code/js/p.js/include/tinymce.3.5.10/plugins/advlink/js/advlink.js",
+		"/C/Plura/dev/code/js/p.js/include/jquery-1.10.2.min.js",
+		"/C/Plura/dev/code/js/p.js/include/tinymce.3.5.10/themes/advanced/js/charmap.js",
+		"/C/Plura/dev/code/js/p.js/include/tinymce.3.5.10/themes/advanced/skins/o2k7/ui_silver.css",
+		"/C/Plura/dev/code/js/p.js/src/utils/String.js",
+		"/C/Plura/dev/code/js/p.js/src/layout/navigation/Nav.js",
+		"/C/Plura/dev/code/js/p.js/test/layout/SlideShow/plura.layout.Slideshow - string collection.html",
+		"/C/Plura/dev/code/js/p.js/test/layout/SlideShow/plura.layout.Slideshow.html",
+		"/C/Users/Tiago Simoes/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/C/Plura/dev/code/js/collections.html",
+		"/C/Plura/dev/code/js/p.js/src/_notes/dwsync.xml",
+		"/C/Plura/dev/code/js/p.js/src/utils/Cache.js",
+		"/C/Plura/dev/code/js/p.js/src/utils/Extend.js",
+		"/C/Plura/dev/code/js/p.js/src/utils/Flat.js",
+		"/C/Plura/dev/code/js/p.js/src/form/Form.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/CheckOut.js",
+		"/C/Plura/dev/code/js/p.js/src/events/EventDispatcher.js",
+		"/C/Plura/dev/code/js/p.js/src/fx/Parallax.js",
+		"/C/Plura/dev/code/js/p.js/src/layout/Social.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/sequence/PreviousNext.js",
+		"/C/Users/Tiago Simoes/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Plura/dev/code/js/p.js/src/ecommerce/CartItem.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/Sequence.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/structures/Menu.js",
+		"/C/Users/Tiago Simoes/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Plura/dev/code/js/p.js/src/templates/checkout/End.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/structures/Tabs.js",
+		"/C/Plura/dev/code/js/p.js/src/templates/checkout/end/List.js",
+		"/C/Plura/dev/code/js/p.js/src/events/Touch.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\twentyfourteen",
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\sgl",
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\sgl\\js\\core",
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\sgl\\_content",
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\sgl",
+			"C:\\Plura\\dev\\sites\\2014\\socgeografialisboa\\site\\wp\\wp-content\\themes\\sgl\\js\\core",
+			"C:\\Plura\\dev\\sites\\2013\\ohmm\\site\\wp\\wp-content\\themes\\ohmm",
+			"C:\\Plura\\dev\\sites\\2013\\ohmm\\site\\wp\\wp-content\\themes\\plura_www_ohmm_pt\\_content\\js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"sidebar.php",
+			"test/",
+			", 'twentyfourteen'",
+			"_content/",
+			"pwp.process",
+			"_content",
+			"_content/",
+			"_content",
+			"process.php",
+			"http://localhost/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl",
+			"_content/",
+			"process/",
+			"starter template",
+			"script",
+			"http://localhost/dev/sites/2013/ohmm/site/wp/wp-content/themes/ohmm",
+			"primary-navigation",
+			"lang",
+			"pwp.lang",
+			"options.lang",
+			"primar",
+			"#primary-navigation",
+			"header #primary-navigation",
+			"header-m",
+			"site-header",
+			"header",
+			"path",
+			"options.ID",
+			"id",
+			"options.ID",
+			"options.pwp.lang",
+			"options.lang",
+			"options.ID",
+			"options.lang",
+			"core",
+			"css",
+			"social",
+			"travellers",
+			"init_secondary_menu",
+			"touch",
+			"all",
+			"labels",
+			"opts",
+			"[lang",
+			"objs",
+			".toggle",
+			"toggle.en",
+			"toggle.enabl",
+			"contacts",
+			"-webkit-",
+			"-webkit",
+			"wewe",
+			"jpg",
+			"layout.Nav",
+			"Nav",
+			"layout.Nav"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"[opts.lang"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/init.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 924.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ohmmsty",
+				"wp\\wp-content\\themes\\plura_www_ohmm_pt\\style.css"
+			],
+			[
+				"styles.",
+				"temp\\index1\\css\\styles.css"
+			],
+			[
+				"resize",
+				"wp\\wp-content\\themes\\plura_www_ohmm_pt\\_content\\js\\layout\\resize\\ResizeManager.js"
+			],
+			[
+				"flat",
+				"utils\\Flat.js"
+			],
+			[
+				"exten",
+				"utils\\Extend.js"
+			],
+			[
+				"in",
+				"install"
+			],
+			[
+				"menu",
+				"templates\\structures\\Menu.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Plura\\dev\\sites\\2014\\pbcm.intro\\project.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 427.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
