@@ -92,10 +92,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/init.php",
+			"file": "src/js/p.wp.js",
 			"settings":
 			{
-				"buffer_size": 4046,
+				"buffer_size": 1879,
 				"line_ending": "Windows"
 			}
 		}
@@ -192,6 +192,8 @@
 	},
 	"file_history":
 	[
+		"/C/Plura/dev/code/wp/src/php/includes/js.php",
+		"/C/Plura/dev/code/wp/src/js/p.wp.js",
 		"/C/Plura/dev/code/wp/project.sublime-project",
 		"/C/Plura/dev/code/js/project.sublime-project",
 		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/pwp/js/external/jquery-ui/jquery-ui.min.css",
@@ -330,6 +332,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"PWP.l",
 			"sidebar.php",
 			"test/",
 			", 'twentyfourteen'",
@@ -408,11 +411,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/init.php",
-					"semi_transient": true,
+					"file": "src/js/p.wp.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4046,
+						"buffer_size": 1879,
 						"regions":
 						{
 						},
@@ -420,16 +423,15 @@
 						[
 							[
 								0,
-								0
+								1879
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 924.0,
+						"translation.x": 2683.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -542,7 +544,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 427.0,
+	"side_bar_width": 265.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

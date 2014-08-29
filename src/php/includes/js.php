@@ -15,7 +15,7 @@ if ( function_exists('qtrans_getLanguage') && preg_match("/\/" . qtrans_getLangu
 
 } else {
 
-	$pwp_root = get_bloginfo('url');
+	$pwp_root = get_bloginfo('url') . "/";
 
 }
 
