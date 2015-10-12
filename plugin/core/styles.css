@@ -1,0 +1,39 @@
+div[id^="custom_fields"]>.inside:after,
+div[id^="custom_fields"]>.inside fieldset:after				{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+
+
+div[id^="custom_fields"] fieldset legend					{ font-weight:bold; }
+div[id^="custom_fields"] fieldset legend					{ font-size:18px; }
+
+
+
+div[id^="custom_fields"] fieldset							{ padding:20px 0 0 10px; }
+div[id^="custom_fields"] fieldset:not(:first-child)			{ margin: 20px 0 0 0; }
+
+
+
+
+
+div[id^="custom_fields"] label,
+div[id^="custom_fields"] input[type=text],
+div[id^="custom_fields"] select								{ float:left; }
+
+div[id^="custom_fields"] input[type=text],
+div[id^="custom_fields"] select								{ clear:right; }
+
+div[id^="custom_fields"] label 								{ display:block; clear:left; }
+
+/* dims */
+div[id^="custom_fields"] input[type=text],
+div[id^="custom_fields"] select								{ width: 400px; }
+
+div[id^="custom_fields"] label 								{ width: 200px;	}
+
+div[id^="custom_fields"] label,
+div[id^="custom_fields"] input[type=text],
+div[id^="custom_fields"] select								{ height: 30px; margin:0 0 20px 0; }
+
+
+
+/* colors */
+div[id^="custom_fields"] fieldset							{ border: 1px solid #CCC; }

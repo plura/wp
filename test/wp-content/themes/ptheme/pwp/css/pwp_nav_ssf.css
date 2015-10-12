@@ -1,0 +1,38 @@
+/* NAVIGATION INITITALIZATION: Son of SuckerFish DropDown */
+.pwp_nav_ssf, .pwp_nav_ssf ul		{ padding: 0; margin: 0; list-style: none; line-height:1;	}
+
+.pwp_nav_ssf a 						{ display: block; width: 10em; 								}
+
+.pwp_nav_ssf li 					{ float: left; width: 10em;									}
+
+.pwp_nav_ssf li ul 					{ position: absolute; width: 10em; left: -999em; 			}
+
+
+
+/* multiple leves [3rd depth] _*/
+
+.pwp_nav_ssf li ul ul 				{ margin: -1em 0 0 10em; 	}
+
+.pwp_nav_ssf li:hover ul ul, 
+.pwp_nav_ssf li:hover ul ul ul		{ left: -999em; 			}
+
+.pwp_nav_ssf li:hover ul, 
+.pwp_nav_ssf li li:hover ul, 
+.pwp_nav_ssf li li li:hover ul		{ left: auto;				}
+
+
+/**	
+	http://facility9.com/2008/07/17/ie7-dropdowns-and-z-index/ &&  http://www.builtfromsource.com/2006/10/23/a-fix-for-suckerfish-dropdowns-in-ie-7/
+	z-index: 100; 			This is the important style directive, without it IE7 chokes 
+	visibility:	 inherit;	 fixes IE7 'sticky bug'
+*/
+.pwp_nav_ssf li:hover ul 		{ left: auto; *visibility: inherit; *z-index: 100;  }
+
+
+
+.pwp_nav_ssf li:hover 			{  position: static; } /*ie7...*/
+
+
+
+
+

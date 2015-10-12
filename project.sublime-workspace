@@ -92,26 +92,31 @@
 	"buffers":
 	[
 		{
-			"file": "src/js/p.wp.js",
+			"file": "src/js/p.js",
 			"settings":
 			{
-				"buffer_size": 1879,
+				"buffer_size": 51725,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/php/includes/js.php",
+			"file": "src/init.php",
 			"settings":
 			{
-				"buffer_size": 2169,
+				"buffer_size": 4075,
 				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -198,10 +203,23 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/Plura/dev/code/wp",
+		"/C/Plura/dev/code/wp/plugin",
+		"/C/Plura/dev/code/wp/src"
+	],
 	"file_history":
 	[
-		"/C/Plura/dev/code/wp/src/php/includes/js.php",
+		"/C/Plura/dev/code/wp/src/init.php",
+		"/C/Plura/dev/code/wp/src/js/p.js",
+		"/C/Plura/dev/code/wp/src/js/p.admin.js",
 		"/C/Plura/dev/code/wp/src/js/p.wp.js",
+		"/C/Plura/dev/code/wp/plugin/core/styles.css",
+		"/C/Plura/dev/installs/apps/skin/colantes/worten/error_log",
+		"/C/Plura/dev/code/wp/src/php/functions/media.php",
+		"/C/Plura/dev/code/wp/plugin/core/init.php",
+		"/C/Plura/dev/code/wp/src/php/includes/js.php",
 		"/C/Plura/dev/code/wp/project.sublime-project",
 		"/C/Plura/dev/code/js/project.sublime-project",
 		"/C/Plura/dev/sites/2014/socgeografialisboa/site/wp/wp-content/themes/sgl/pwp/js/external/jquery-ui/jquery-ui.min.css",
@@ -340,6 +358,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"{",
+			"$a",
 			"PWP.l",
 			"sidebar.php",
 			"test/",
@@ -419,11 +439,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/js/p.wp.js",
+					"file": "src/js/p.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1879,
+						"buffer_size": 51725,
 						"regions":
 						{
 						},
@@ -431,14 +451,14 @@
 						[
 							[
 								0,
-								1879
+								51725
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 2683.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -447,19 +467,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/php/includes/js.php",
-					"semi_transient": false,
+					"file": "src/init.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2169,
+						"buffer_size": 4075,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2169,
-								2169
+								0,
+								0
 							]
 						],
 						"settings":
@@ -512,6 +532,7 @@
 	{
 		"height": 0.0
 	},
+	"pinned_build_system": "",
 	"project": "project.sublime-project",
 	"replace":
 	{
@@ -521,6 +542,7 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -557,8 +579,17 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"nov",
+				"C:\\Plura\\dev\\sites\\2014\\novasotecma\\project.sublime-project"
+			],
+			[
+				"ohmm",
+				"C:\\Plura\\dev\\sites\\2013\\ohmm\\ohmm.sublime-project"
+			],
 			[
 				"",
 				"C:\\Plura\\dev\\sites\\2014\\pbcm.intro\\project.sublime-project"
@@ -569,11 +600,13 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -581,7 +614,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 265.0,
+	"side_bar_width": 267.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

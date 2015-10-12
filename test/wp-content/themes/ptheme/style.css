@@ -1,0 +1,18 @@
+/**
+ * Theme Name: pTheme
+ * Theme URI: http://plura.pt/
+ * Author: Plura
+ * Author URI: http://plura.pt/
+ * Text Domain: ptheme
+ */
+
+
+ body {}
+
+ html {}
+
+
+ /* STRUCTURE */
+
+/* dims */
+ #root					{ padding-top:  80px; }
