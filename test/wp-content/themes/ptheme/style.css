@@ -6,6 +6,12 @@
  * Text Domain: ptheme
  */
 
+/* fonts */
+@import url("css/fonts.css");
+
+/* colors */
+@import url("css/colors.css");
+
 
  body {}
 
@@ -13,6 +19,51 @@
 
 
  /* STRUCTURE */
+html 														{ padding: 0; height: 100%; }
+body 														{ height: 100%; padding: 0; }
+
+
+
+
+
+
+
 
 /* dims */
- #root					{ padding-top:  80px; }
+ #root														{ padding-top:  80px; }
+
+
+
+
+/*FOOTER*/
+footer.main 												{ width: 100%; }
+
+.home footer.main,
+footer.main.fixed 											{ position: absolute; bottom: 0; }
+
+footer.main .container:not(.minified)						{ padding-top: 20px; padding-bottom: 20px; }
+
+/* FOOTER: Social */
+footer.main .social											{ text-align: center;}
+footer.main .social a										{ display: inline-table; text-align: center; }
+footer.main .social a:before								{ display: table-cell; vertical-align: middle; }
+footer.main .social a span									{ display: none; }
+
+/*dims*/
+footer.main .social a										{ width: 40px; height: 40px;  }
+footer.main .social a:not(:last-child)						{ margin-right: 15px; }
+
+
+/*QUOTES*/
+/* 8 - Quotes */
+button[data-target='#modal-quotes']							{ position: fixed; padding: 0;  }
+
+button[data-target='#modal-quotes'] span.icon 				{ display: inline-table; text-align: center; }
+button[data-target='#modal-quotes'] span.icon:before 		{ display: table-cell; vertical-align: middle; }
+ 
+button[data-target='#modal-quotes'] span.text				{ display: none; }
+
+/*dims*/
+button[data-target='#modal-quotes']							{ width: 60px; height: 60px; bottom: 10px; right: 10px; }
+
+

@@ -1,0 +1,24 @@
+
+
+/* COLORS */
+
+
+/* light grey */
+footer.main 								{ background-color: #efefef; }
+
+
+/* dark-grey */
+footer.main .social a						{ background-color: #333; }
+
+
+/* white */
+footer.main .social a						{ color: #fff;}
+
+
+
+
+
+
+/* BORDER RADIUS */
+footer.main .social a,
+button[data-target='#modal-quotes']			{ -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }

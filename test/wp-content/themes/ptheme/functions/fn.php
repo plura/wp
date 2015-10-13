@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 //http://www.smashingmagazine.com/2011/12/29/internationalizing-localizing-wordpress-theme/
 function my_theme_setup(){
 
-	load_theme_textdomain('novasotecma', get_template_directory() . '/languages');
+	load_theme_textdomain( _theme_name(), get_template_directory() . '/languages');
 
 }
 
@@ -176,7 +176,7 @@ function _has_fn( $fn ) {
 
 function _theme_name() {
 
-	return wp_get_theme()->TextDomain;
+	return wp_get_theme()->get( 'TextDomain' );
 
 }
 

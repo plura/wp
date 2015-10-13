@@ -11,9 +11,6 @@
 
 		<?php wp_head(); ?>
 
-		<!-- GLOBALS -->
-		<?php include_once('includes/globals.php'); ?>
-	
 		<!-- PLURA PWP -->
 		<?php include_once('pwp/init.php'); ?>
 			
@@ -21,6 +18,8 @@
 		<link href="<?php bloginfo('template_url'); ?>/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="<?php bloginfo('template_url'); ?>/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
+		<!-- FONTAWESOME -->
+	  <link href="<?php bloginfo('template_url'); ?>/fonts/font-awesome-4.4.0/font-awesome.min.css" rel="stylesheet">		
 
 	  <!-- included after bootstrap.css to avoid override -->
 	  <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">

@@ -1,0 +1,32 @@
+
+
+
+
+
+/* FONT ICONS */
+footer.main .mini .social-icon:after,
+footer.main .social a:before,
+button[data-target='#modal-quotes'] span.icon:before									{ font-family:'FontAwesome'; }
+
+footer.main .social a 																	{ text-decoration: none; }
+
+
+
+/*footer*/
+footer.main .mini .social-icon															{ font-size: 1.2em; }
+footer.main .social a:before															{ font-size: 1.4em; }
+
+footer.main .mini .social-icon.facebook:after											{ content: "\f082"; }
+footer.main .social a[href*=facebook]:before		            						{ content: "\f09a"; }
+footer.main .mini .social-icon.linkedin:after											{ content: "\f08c"; }
+footer.main .social a[href*=linkedin]:before											{ content: "\f0e1"; }
+footer.main .mini .social-icon.twitter:after											{ content: "\f081"; }
+footer.main .social a[href*=twitter]:before												{ content: "\f099"; }
+footer.main .social a[href*=youtube]:before                                             { content: "\f167"; }
+
+
+/*modal*/
+button[data-target='#modal-quotes'] span.icon:before 									{ font-size: 2em; }
+
+button[data-target='#modal-quotes'] span.icon:before 									{ content: "\f06b";  }
+ 

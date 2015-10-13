@@ -9,9 +9,9 @@
 
 //qtranslate adds (non default) lang code to the WP site address. To get a 'clean' WP root url without 
 //the lang prefix, one was to clean it via regexp. pwp_home will maintain lang code in its url.
-if ( function_exists('qtrans_getLanguage') && preg_match("/\/" . qtrans_getLanguage() . "$/", get_bloginfo('url')) ) {
+if ( function_exists('qtranxf_getLanguage') && preg_match("/\/" . qtranxf_getLanguage() . "$/", get_bloginfo('url')) ) {
 
-	$pwp_root = preg_replace("/" . qtrans_getLanguage() . "$/" , "", get_bloginfo('url'));
+	$pwp_root = preg_replace("/" . qtranxf_getLanguage() . "$/" , "", get_bloginfo('url'));
 
 } else {
 
@@ -60,7 +60,7 @@ var PWP = {
 		home:			"<?php print get_bloginfo('url') . "/"; ?>",
 		dir:			"<?php print PWP_URL; ?>",
 		front_page:		<?php print (is_front_page() ? 'true' : 'false'); ?>,
-		lang:			<?php print function_exists('qtrans_getLanguage')? "'". qtrans_getLanguage() . "'" : 'null'; ?>,
+		lang:			<?php print function_exists('qtranxf_getLanguage')? "'". qtranxf_getLanguage() . "'" : 'null'; ?>,
 		permalinks:		<?php print pwp_use_permalinks()? "true" : "false";		?>,
 		template_dir:	"<?php print get_bloginfo('template_directory') . "/";	?>",
 		selected:		{

@@ -19,6 +19,16 @@
     <!--</footer>-->
 
 
+<?php
+
+    if ( !is_front_page() ) {
+
+      include( 'includes/modal.php' );
+
+    }
+
+?>    
+
     <?php wp_footer(); ?>
 
   </body>

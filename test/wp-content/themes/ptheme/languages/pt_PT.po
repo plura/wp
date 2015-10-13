@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-10-12 19:52+0100\n"
-"PO-Revision-Date: 2015-10-12 19:53+0100\n"
+"POT-Creation-Date: 2015-10-13 19:59+0100\n"
+"PO-Revision-Date: 2015-10-13 19:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_PT\n"
@@ -12,55 +12,78 @@ msgstr ""
 "X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_x\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-KeywordsList: __;_x;_e\n"
+"X-Poedit-SearchPath-0: languages\n"
+"X-Poedit-SearchPath-1: includes\n"
 "X-Poedit-SearchPathExcluded-0: pwp\n"
-
-#: content.php:29
-msgid ", "
-msgstr ""
-
-#: content.php:61
-msgid "Leave a comment"
-msgstr "Deixe um comentário"
-
-#: content.php:61
-msgid "1 Comment"
-msgstr "1 Comentário"
-
-#: content.php:61
-msgid "% Comments"
-msgstr "% Comentários"
-
-#: content.php:67
-msgid "Edit"
-msgstr "Editar"
-
-#: content.php:96
-msgid "Pages:"
-msgstr "Páginas"
-
-#: functions/fn.php:70
-#, php-format
-msgid "Page %s"
-msgstr "Página %s"
 
 #: includes/content-post.php:4
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue a leitura <span class=\"meta-nav\">&rarr;</span>"
 
-#: search.php:39
-msgid "Previous page"
-msgstr "Página Anterior"
+#: includes/modal.php:6 includes/page/contacts.php:3
+msgid "Quote"
+msgstr "Cotação"
 
-#: search.php:40
-msgid "Next page"
-msgstr "Próxima Página"
+#: includes/modal.php:21
+msgid "Quote Request Form"
+msgstr "Pedido de Cotações"
 
-#: search.php:41
-msgid "Page"
-msgstr "Página"
+#: includes/modal.php:34 includes/page/contacts.php:9
+msgid "Name"
+msgstr "Nome"
 
-#: searchform.php:3
-msgid "Search for:"
-msgstr "Procurar por:"
+#: includes/modal.php:52 includes/page/contacts.php:27
+#: includes/page/contacts.php:36
+msgid "Telephone"
+msgstr "Telefone"
+
+#: includes/modal.php:61 includes/page/contacts.php:51
+msgid "Message"
+msgstr "Mensagem"
+
+#: includes/modal.php:73 includes/page/contacts.php:39
+msgid "Add me to the MailingList"
+msgstr "Adicione-me à MailingList"
+
+#: includes/modal.php:84
+msgid "Close"
+msgstr "Fechar"
+
+#: includes/modal.php:86 includes/page/contacts.php:68
+msgid "Submit"
+msgstr "Enviar"
+
+#: includes/modal.php:87
+msgid "Send"
+msgstr "Enviar"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Deixe um comentário"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Comentário"
+
+#~ msgid "% Comments"
+#~ msgstr "% Comentários"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "Pages:"
+#~ msgstr "Páginas"
+
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+#~ msgid "Previous page"
+#~ msgstr "Página Anterior"
+
+#~ msgid "Next page"
+#~ msgstr "Próxima Página"
+
+#~ msgid "Page"
+#~ msgstr "Página"
+
+#~ msgid "Search for:"
+#~ msgstr "Procurar por:"

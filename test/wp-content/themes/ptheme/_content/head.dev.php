@@ -1,4 +1,8 @@
 <!-- DEVELOPMENT SCRIPT HERE -->
-<script src="<?php bloginfo('template_directory'); ?>/js/dev/theme.js"></script>
 
-
+<!-- ../../wp/test/wp-content/themes/ptheme/js/dev/ -->
+<script src="<?php bloginfo('template_directory'); ?>/js/dev/ptheme.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/dev/data/Lang.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/dev/layout/ResizeManager.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/dev/modules/Footer.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/dev/modules/Quotes.js"></script>
