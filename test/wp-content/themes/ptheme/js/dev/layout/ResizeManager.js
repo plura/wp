@@ -35,7 +35,6 @@ plura.obj('ptheme.layout.ResizeManager', function (options) {
 
 			}
 
-
 		},
 
 
@@ -53,9 +52,17 @@ plura.obj('ptheme.layout.ResizeManager', function (options) {
 
 
 		//triggers resize handler when window is resized and when is fully loaded
-		eventWindowHandler = function () {
+		eventWindowHandler = function (event) {
 
-			resize();
+			if(event.type === 'load' && options.delay) {
+
+				setTimeout( resize, options.delay );
+
+			} else {
+
+				resize();
+
+			}
 
 		},
 
@@ -63,7 +70,7 @@ plura.obj('ptheme.layout.ResizeManager', function (options) {
 
 		init = function () {
 
-			$(window).resize(eventWindowHandler).load(eventWindowHandler);
+			$(window).resize(eventWindowHandler).load( eventWindowHandler );
 
 			if (options.objects) {
 

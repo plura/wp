@@ -90,7 +90,7 @@
 		
 		<?php
 			
-			include_once( 'includes/content-post.php');
+			include('includes/content-post.php');
 			
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', _theme_name() ) . '</span>',

@@ -19,8 +19,8 @@
 
 
  /* STRUCTURE */
-html 														{ padding: 0; height: 100%; }
-body 														{ height: 100%; padding: 0; }
+html 															{ padding: 0; height: 100%; }
+body 															{ height: 100%; padding: 0; }
 
 
 
@@ -30,40 +30,90 @@ body 														{ height: 100%; padding: 0; }
 
 
 /* dims */
- #root														{ padding-top:  80px; }
+ #root															{ padding-top:  80px; }
+
+
+
+/*CONTENT*/
+
+
+/*CONTENT:NAV*/
+.navbar .menu-item.clickable-parent .dropdown-menu				{ display: block; opacity: 0; visibility: hidden; }
+.navbar .menu-item.clickable-parent:hover .dropdown-menu		{ opacity: 1; visibility: visible; }
+
+
+/*CONTENT: header*/
+header .jumbotron  												{ position: relative; }
+header .jumbotron .entry-title 									{ position: absolute; bottom: 0; left: 0; width: 100%;}
+header .jumbotron .entry-title h1 								{ margin: 0; }
+
+/* dims */
+header .jumbotron 												{ height: 200px; }
+header .jumbotron .entry-title h1								{ padding: 20px; }
+
+
+
+
+
+
+/*SOCIAL ICONS*/
+/* 	SOCIAL ICONS COMMON [POP]  
+	the usage of an icon-wrapper is b/c of vertical-centering of 
+	all icons AND individual icon's top value transition
+*/
+.social-icons.pop														{ display: table;  width: 100%; z-index: 999; top: 0; left: 0; }
+.social-icons.pop .social-icons-inner									{ display: table-cell; vertical-align: middle; }
+.social-icons.pop .social-icons-inner .icon-wrapper						{ display: inline-block; position: relative; }
+.social-icons.pop .social-icons-inner .icon-wrapper .icon 				{ position: absolute; top: 200px; left: 0; opacity: 0; }
+
+.social-icons.pop														{ visibility: hidden; opacity: 0;}
+
+.touch .parent.active .social-icons.pop,
+.no-touch .parent:hover .social-icons.pop								{ visibility: visible; opacity: 1; }
+
+.touch .parent.active .social-icons.pop .icon,
+.no-touch .parent:hover .social-icons.pop .icon 						{ top: 0; opacity: 1; }
+
+/*variations*/
+.social-icons.pop 														{ height: 100%; position: absolute;  }
+
+/*dims*/
+.social-icons.pop .icon-wrapper,
+.social-icons.pop .icon 												{ width: 60px; height: 60px;  }
+.social-icons.pop .icon-wrapper:not(:last-child) 						{ margin-right: 10px; }
 
 
 
 
 /*FOOTER*/
-footer.main 												{ width: 100%; }
+footer.main 													{ width: 100%; }
 
 .home footer.main,
-footer.main.fixed 											{ position: absolute; bottom: 0; }
+footer.main.fixed 												{ position: absolute; bottom: 0; }
 
-footer.main .container:not(.minified)						{ padding-top: 20px; padding-bottom: 20px; }
+footer.main .container:not(.minified)							{ padding-top: 20px; padding-bottom: 20px; }
 
 /* FOOTER: Social */
-footer.main .social											{ text-align: center;}
-footer.main .social a										{ display: inline-table; text-align: center; }
-footer.main .social a:before								{ display: table-cell; vertical-align: middle; }
-footer.main .social a span									{ display: none; }
+footer.main .social												{ text-align: center;}
+footer.main .social a											{ display: inline-table; text-align: center; }
+footer.main .social a:before									{ display: table-cell; vertical-align: middle; }
+footer.main .social a span										{ display: none; }
 
 /*dims*/
-footer.main .social a										{ width: 40px; height: 40px;  }
-footer.main .social a:not(:last-child)						{ margin-right: 15px; }
+footer.main .social a											{ width: 40px; height: 40px;  }
+footer.main .social a:not(:last-child)							{ margin-right: 10px; }
 
 
 /*QUOTES*/
 /* 8 - Quotes */
-button[data-target='#modal-quotes']							{ position: fixed; padding: 0;  }
+button[data-target='#modal-quotes']								{ position: fixed; padding: 0;  }
 
-button[data-target='#modal-quotes'] span.icon 				{ display: inline-table; text-align: center; }
-button[data-target='#modal-quotes'] span.icon:before 		{ display: table-cell; vertical-align: middle; }
+button[data-target='#modal-quotes'] span.icon 					{ display: inline-table; text-align: center; }
+button[data-target='#modal-quotes'] span.icon:before 			{ display: table-cell; vertical-align: middle; }
  
-button[data-target='#modal-quotes'] span.text				{ display: none; }
+button[data-target='#modal-quotes'] span.text					{ display: none; }
 
 /*dims*/
-button[data-target='#modal-quotes']							{ width: 60px; height: 60px; bottom: 10px; right: 10px; }
+button[data-target='#modal-quotes']								{ width: 60px; height: 60px; bottom: 10px; right: 10px; }
 
 

@@ -11,16 +11,8 @@ case 2:
 
 default:
 
-	
-
+	the_content();
 
 }
-
-
-
-
-
-
-
 
 ?>

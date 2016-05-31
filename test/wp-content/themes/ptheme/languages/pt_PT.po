@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-10-13 19:59+0100\n"
-"PO-Revision-Date: 2015-10-13 19:59+0100\n"
+"POT-Creation-Date: 2015-10-13 23:57+0100\n"
+"PO-Revision-Date: 2015-10-13 23:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_PT\n"
@@ -21,40 +21,40 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue a leitura <span class=\"meta-nav\">&rarr;</span>"
 
-#: includes/modal.php:6 includes/page/contacts.php:3
+#: includes/modal.php:5
 msgid "Quote"
 msgstr "Cotação"
 
-#: includes/modal.php:21
+#: includes/modal.php:20
 msgid "Quote Request Form"
 msgstr "Pedido de Cotações"
 
-#: includes/modal.php:34 includes/page/contacts.php:9
+#: includes/modal.php:33 includes/page/contacts.php:7
 msgid "Name"
 msgstr "Nome"
 
-#: includes/modal.php:52 includes/page/contacts.php:27
-#: includes/page/contacts.php:36
+#: includes/modal.php:51 includes/page/contacts.php:25
+#: includes/page/contacts.php:34
 msgid "Telephone"
 msgstr "Telefone"
 
-#: includes/modal.php:61 includes/page/contacts.php:51
+#: includes/modal.php:60 includes/page/contacts.php:49
 msgid "Message"
 msgstr "Mensagem"
 
-#: includes/modal.php:73 includes/page/contacts.php:39
+#: includes/modal.php:72 includes/page/contacts.php:37
 msgid "Add me to the MailingList"
 msgstr "Adicione-me à MailingList"
 
-#: includes/modal.php:84
+#: includes/modal.php:83
 msgid "Close"
 msgstr "Fechar"
 
-#: includes/modal.php:86 includes/page/contacts.php:68
+#: includes/modal.php:85 includes/page/contacts.php:66
 msgid "Submit"
 msgstr "Enviar"
 
-#: includes/modal.php:87
+#: includes/modal.php:86
 msgid "Send"
 msgstr "Enviar"
 

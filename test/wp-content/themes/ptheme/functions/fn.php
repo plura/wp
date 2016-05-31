@@ -148,13 +148,15 @@ add_filter( 'body_class', 'front_add_slug_body_class' );
 
 function _fn( $fn, $args = NULL ) {
 
+	$f = wp_get_theme()->get('TextDomain') . '_' . $fn;
+
 	if (is_null($args)) {
 
-		return call_user_func( $fn );
+		return call_user_func( $f );
 
 	}
 
-	return  call_user_func_array( $fn, $args );
+	return  call_user_func_array( $f, $args );
 
 }
 
@@ -162,9 +164,9 @@ function _fn( $fn, $args = NULL ) {
 
 function _has_fn( $fn ) {
 
-	if ( function_exists( wp_get_theme()->TextDomain . '_' . $fn ) ) {
+	if ( function_exists( wp_get_theme()->get('TextDomain') . '_' . $fn ) ) {
 
-		return $true;
+		return true;
 
 	}
 
@@ -179,6 +181,8 @@ function _theme_name() {
 	return wp_get_theme()->get( 'TextDomain' );
 
 }
+
+
 
 
 

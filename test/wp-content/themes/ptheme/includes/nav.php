@@ -49,7 +49,7 @@
                   'container'         => false,
                   'menu_class'        => 'nav navbar-nav',
                   'fallback_cb'       => 'pwp_bootstrap_navwalker::fallback',
-                  'walker'            => new pwp_bootstrap_navwalker()
+                  'walker'            => new pwp_bootstrap_navwalker( true )
               ));               
           
             ?>

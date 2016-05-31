@@ -1,3 +1,13 @@
+/* BACKGROUND */
+
+
+.container .jumbotron						{ background-size: cover; background-position: center; background-repeat: no-repeat;}
+
+
+
+
+
+
 
 
 /* COLORS */
@@ -12,7 +22,24 @@ footer.main .social a						{ background-color: #333; }
 
 
 /* white */
+header .jumbotron .entry-title,
 footer.main .social a						{ color: #fff;}
+
+
+
+
+/* GRADIENTS */
+header .jumbotron .entry-title {
+
+	background: #FFF;
+	
+	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0, 1) 33%, rgba(0,0,0,0) 100%);
+	
+	background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0, 1) 33%, rgba(0,0,0,0) 100%);
+	
+	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0, 1) 33%, rgba(0,0,0,0) 100%);
+
+}
 
 
 

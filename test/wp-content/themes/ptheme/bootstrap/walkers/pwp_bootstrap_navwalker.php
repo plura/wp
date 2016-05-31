@@ -5,9 +5,20 @@ include( dirname( __FILE__) . '/wp_bootstrap_navwalker.php' );
 /**
  * extending wp_bootstrap_navwalker is necessary to allow root menu items with children
  * to be clickable [http://stackoverflow.com/a/22841049/939693]
-
  */
 class pwp_bootstrap_navwalker extends wp_bootstrap_navwalker {
+
+	protected $clickable_parents;
+
+
+
+	public function pwp_bootstrap_navwalker( $clickable_parents = false ) {
+
+		$this->clickable_parents = $clickable_parents;
+
+	}
+
+
 
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -40,8 +51,15 @@ class pwp_bootstrap_navwalker extends wp_bootstrap_navwalker {
 			if ( $args->has_children )
 				$class_names .= ' dropdown';
 
+			//[PLURA MOD]
+			if ( $args->has_children && $this->clickable_parents )
+				$class_names .= ' clickable-parent';
+
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
+
+
+
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
@@ -57,11 +75,24 @@ class pwp_bootstrap_navwalker extends wp_bootstrap_navwalker {
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href'] 			= ! empty( $item->url ) ? $item->url : '';
-				//$atts['href']   		= '#';
-				//$atts['data-toggle']	= 'dropdown';
+
+				//[PLURA MOD]
+				if ($this->clickable_parents) {
+				
+					$atts['href'] 			= ! empty( $item->url ) ? $item->url : '';
+				
+				} else {
+
+					$atts['href']   		= '#';
+					$atts['data-toggle']	= 'dropdown';
+
+				}
+				//[PLURA MOD]:END
+				
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
+				
+
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
