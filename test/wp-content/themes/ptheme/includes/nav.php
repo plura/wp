@@ -63,7 +63,7 @@
                 </button>
               <?php
 
-                echo qtranxf_generateLanguageSelectCode('text');
+                //echo qtranxf_generateLanguageSelectCode('text');
 
               ?>
               </div>

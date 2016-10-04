@@ -1,14 +1,14 @@
       <!--<hr>-->
 
-<?php if ( !_has_fn('has_sidebar') || _fn('has_sidebar') ) { ?>
-
         </div> <!--/main-col [bootstrap]-->
+
+<?php if ( !_has_fn('has_sidebar') || _fn('has_sidebar') ) { ?>
 
         <?php include('includes/sidebar.php'); ?>
 
-		  </div> <!--/row [4 bootsrap purposes > main | sidebar ] -->
-
 <?php } ?>
+
+      </div> <!--/row [4 bootsrap purposes > main | sidebar ] -->
 
     </div> <!-- /container -->
 

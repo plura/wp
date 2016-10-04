@@ -11,19 +11,6 @@
 
 		<?php wp_head(); ?>
 
-		<!-- PLURA PWP -->
-		<?php include_once('pwp/init.php'); ?>
-			
-		<!-- BOOTSTRAP [after init b/c it should come after jquery initialitzation] -->
-		<link href="<?php bloginfo('template_url'); ?>/bootstrap/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-		<script src="<?php bloginfo('template_url'); ?>/bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-
-		<!-- FONTAWESOME -->
-	  <link href="<?php bloginfo('template_url'); ?>/fonts/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">		
-
-	  <!-- included after bootstrap.css to avoid override -->
-	  <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-
 	</head>
 
 

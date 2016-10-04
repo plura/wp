@@ -40,7 +40,31 @@ function custom_type_babka_parties_register(){
 		'rewrite'				=> array("slug" => "party"),
 		'hierarchical'			=> false,
 		'supports'				=> array('title','editor','thumbnail')
-	 ));	
+	 ));
+
+	//taxonomy
+	register_taxonomy('babka_parties_categories', array('babka_parties'), array(
+		'hierarchical'	=> true,
+		'labels'		=> array(
+		
+    		'name'				=> _x( 'Categorias Festas', 'taxonomy general name' ),
+	    	'singular_name'		=> _x( 'Categoria Festas', 'taxonomy singular name' ),
+    		'search_items'		=> __( 'Procurar Categorias Festas' ),
+	    	'all_items'			=> __( 'Todas Categorias' ),
+    		'parent_item'		=> __( 'Categoria Festas Pai' ),
+			'parent_item_colon' => __( 'Categoria Festas:' ),
+			'edit_item' 		=> __( 'Edit Categoria Festas' ),
+			'update_item' 		=> __( 'Actualizar Categoria Festas' ),
+			'add_new_item' 		=> __( 'Adicionar Nova Categoria Festas' ),
+			'new_item_name' 	=> __( 'Nova Categoria Festas Nome' ),
+			'menu_name' 		=> __( 'Categorias Festas' )
+		
+		),
+		'show_ui'				=> true,
+		'show_in_nav_menus'		=> true,		
+		'query_var'				=> true,
+		'rewrite'				=> array( 'slug' => 'party-categories')
+	));		 	
 	
 }
 
