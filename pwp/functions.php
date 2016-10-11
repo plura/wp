@@ -21,12 +21,12 @@ function pwp_enqueue_scripts_and_styles() {
     //no conflict jquery;
     wp_enqueue_script( 'jquery-noconflict', get_stylesheet_directory_uri() . '/pwp/js/jquery-noconflict.js', array('jquery') );    
 
-	//p.js
-    wp_enqueue_script( 'pwp-p', get_stylesheet_directory_uri() . '/pwp/js/p.js', array('jquery') );
+    //p.js
+    wp_enqueue_script( 'pwp-p', get_stylesheet_directory_uri() . '/pwp/js/p.js', array('jquery', 'jquery-noconflict') );
 
-    wp_enqueue_script( 'pwp-p-wp', get_stylesheet_directory_uri() . '/pwp/js/p.wp.js', array('jquery') );
+    wp_enqueue_script( 'pwp-p-wp', get_stylesheet_directory_uri() . '/pwp/js/p.wp.js', array('pwp-p') );
 
-    wp_enqueue_script( 'pwp-p-others', get_stylesheet_directory_uri() . '/pwp/js/p.others.js', array('jquery') );        
+    wp_enqueue_script( 'pwp-p-others', get_stylesheet_directory_uri() . '/pwp/js/p.others.js', array('pwp-p') );        
 
 
     //modules: colorbox

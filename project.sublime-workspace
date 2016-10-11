@@ -188,18 +188,13 @@
 	"buffers":
 	[
 		{
+			"contents": "<?php\n\ninclude_once( dirname( __FILE__ ) . \"/common.php\" );\ninclude_once( dirname( __FILE__ ) . \"/media.php\");\n\n\nfunction pwp_ref_rand( $args = NULL ) {\n\n	if ( is_int( $args ) ) {\n\n		$args = array('number_of_images' => $args);\n\n	}\n\n	$params = pwp_args( array(\n		'category_filter'			=> \"\",\n		'image_src_regex'			=> \"\",\n 		'image_attributes'			=> \"\",\n		'image_class_match'			=> \"\",\n		'number_of_images'			=> 1,\n		'lang'						=> NULL,		\n		'post_type'					=> \"post\",\n		'show_images_in_galleries'	=> true,\n		'show_post_title'			=> true,\n		'show_alt_caption'			=> true,\n		'sort_randomly'				=> true,\n		'thumb_type'				=> \"thumbnail\",\n\n		/*'query'					=> array(\n			'post_type'			=> 'post',\n			'posts_per_page'	=> -1,\n			'orderby'			=> \"rand\"\n		)*/\n\n	), $args);\n\n\n	// get access to wordpress' database object\n	global $wpdb;\n\n  	// variable returned\n	$posts = array();\n\n\n  	// select the post_type sql for both post pages (post_status = 'static') \n  	// and posts (AND post_status = 'publish')\n  	// or for just pages or for just posts (the default)\n  	// by adding this where criteria, we also solve the problem\n  	// of accidentally including images from draft posts.\n	if ( is_string( $params['post_type'] ) ) {\n\n		$sql_post_type = \"post_type = '\" . $params['post_type'] . \"'\";\n\n	} else if( is_array( $params['post_type'] ) ) {\n\n		$sql_post_type = array();\n\n		foreach( $params['post_type'] as $type ) {\n\n			$sql_post_type[] = \"post_type = '\" . $type . \"'\";\n\n		}\n\n		$sql_post_type = \"AND \" . implode(' OR ', $sql_post_type);\n\n	}\n  \n	// assuming $category_filter is a comma separated list of category ids,\n	// modify query to join with post2cat table to select from only the chosen categories\n	$category_filter_join  = \"\";\n	$category_filter_sql   = \"\";\n	$category_filter_group = \"\";\n	\n	if( !empty( $params['category_filter'] ) ) {\n		\n		$category_filter_join  = \"LEFT JOIN $wpdb->term_relationships ON $wpdb->posts.ID = $wpdb->term_relationships.object_id LEFT JOIN $wpdb->term_taxonomy ON $wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id\";\n		\n		$category_filter_sql   = \"AND $wpdb->term_taxonomy.term_id IN (\" . $params['category_filter'] . \")\";   \n		\n		$category_filter_group = \"GROUP BY $wpdb->posts.ID\";\n	\n	}\n  \n	// by default we sort images randomly,\n	// but we can also sort them in descending date order\n	if ( $params['sort_randomly'] ) {\n\n		$sql_order_by = \"rand()\";\n\n	} else {\n\n		$sql_order_by = \"$wpdb->posts.post_date DESC\";\n\n	}\n\n	// query records that contain img tags, ordered randomly\n	// do not select images from password protected posts\n	$sql = \"SELECT $wpdb->posts.ID, $wpdb->posts.post_title, $wpdb->posts.post_content, $wpdb->posts.post_excerpt \n			FROM $wpdb->posts \n			$category_filter_join \n			WHERE (post_content LIKE '%<img%' or post_content LIKE '%[gallery%') 														  \n			AND post_password = '' \n			$sql_post_type \n			$category_filter_sql \n			$category_filter_group \n			ORDER BY $sql_order_by\";\n\n\n	$rows = $wpdb->get_results( $sql );\n\n\n	// keep track of multiple images to prevent displaying duplicates\n	$image_srcs = array();\n\n	// loop through each applicable post from the database\n	$image_count = 0;\n	\n	foreach( $rows as $row ) {\n\n		$matches = array();\n\n    	// find all img tags within each post's content\n    	preg_match_all(\"/<img[^>]+>/i\", $row->post_content, $matches);  //todo guid/src only\n		\n		if( $params['show_images_in_galleries'] ){\n	\n			// find any gallery attachments\n			if(strpos($row->post_content, '[gallery') !== false){\n\n				$images = pwp_get_post_images( $row->ID );\n				\n				if ( $images ) {\n\n					foreach ($images as $image){\n						\n						$matches[0][] = \"<img src=\\\"\" . $image->guid . \"\\\"/>\";\n					\n					}\n\n				}		\n			\n			}\n    	\n    	}\n\n		// if there are none, try again,  \n		if( !count($matches[0]) ) {\n\n			continue;\n\n		}\n\n		// randomize the array of images in this post\n		shuffle($matches[0]);\n\n		// loop through each image candidate for this post and try to find a winner        \n		foreach($matches[0] as $image_element) {\n			\n			preg_match(\"/src\\s*=\\s*(\\\"|')(.*?)\\\\1/i\", $image_element, $image_src);\n			\n			$image_src = $image_src[2];      \n	  \n	  		// make sure we haven't displayed this image before\n			if( empty( $image_src ) || in_array($image_src, $image_srcs) ) {\n\n				continue;\n\n			// if a regex is supplied and it doesn't match, try next post\n			} elseif ( !empty( $params['image_src_regex'] ) && !preg_match(\"/\" .  $params['image_src_regex'] . \"/i\", $image_src)) {\n\n				continue;\n\n			}\n\n			if( !empty( $params['image_class_match'] ) ) {\n				// grab the class attribute and see if it exists, if not try again\n	        	preg_match(\"/class\\s*=\\s*(\\\"|')(.*?)\\\\1/i\", $image_element, $image_classes);\n    	    	\n    	    	$image_classes = $image_classes[2];\n\n				if($image_classes == '') {\n\n					continue;\n\n				}\n\n				$image_classes = explode(\" \", $image_classes);\n				\n				if(!in_array($params['image_class_match'], $image_classes)) {\n\n					continue;\n\n				}\n			\n			}\n\n			// add img src to array to check for duplicates\n			$image_srcs[] = $image_src;\n         \n			// grab the alt attribute and see if it exists, if not supply default\n			preg_match(\"/alt\\s*=\\s*(\\\"|')(.*?)\\\\1/i\", $image_element, $image_alt);\n			\n			$image_alt = $image_alt[2];\n\n			if( empty( $image_alt ) ) {\n\n				$image_alt = \"random image\";\n\n			}\n\n			\n			$img = pwp_image_info( $image_src );\n			\n			$posts[] 	= array(\n				'title' 	=> pwp_trans( $row->post_title, $params['lang'] ),  //pwp_strip_qtlang($row['post_title']),\n				'permalink' => get_permalink($row->ID),\n				'content'	=> pwp_trans( $row->post_content, $params['lang']),\n				'excerpt'   => pwp_trans( $row->post_excerpt, $params['lang']),\n				'img'		=> $img\n			);\n		\n	      	$image_count++;\n	  \n	  		//returns posts\n			if($image_count == $params['number_of_images'] )	{\n\n				return $posts;\n\n			}\n	  \n			//leave the foreach loop and look for images in other posts\n			//TODO: if people wanted to display multiple images per post, we would selectively skip this break\n			break;\n		}\n	}\n}\n\n\n\n\n/**\n* gets image info. the regex is fundamental to correctly retrieve the image metadata. '(.*\\:\")?' is used\n* because the file name and its path maybe separated. The '\\:\"' follows WP syntax pattern regarding image \n* metadata entries in the db\n* @param	id		image id or file string\n* @param	type	image types: 'thumbnail', 'medium', 'large'\n*/\nfunction pwp_image_info( $id ){\n	\n	global $wpdb;\n\n	if(!is_numeric( $id ) ) {\n		\n		$reg	= preg_replace('/^.*\\/([0-9]{4}\\/[0-9]{2}\\/)(.*)$/', '$1(.*\\:\")?$2', $id);\n		\n		$rows	= $wpdb->get_results(\"SELECT $wpdb->postmeta.post_id FROM $wpdb->postmeta \n							   		  WHERE $wpdb->postmeta.meta_value REGEXP '$reg' LIMIT 1\");\n		$id		= $rows[0]->post_id;\n	\n	}\n\n	$a	= wp_get_attachment_metadata( $id );\n\n	$u	= wp_upload_dir();\n	\n	$a['dir']	= $u['baseurl'] . preg_replace('/^(.*[0-9]{2}\\/).*$/', '/$1', $a['file']);\n\n	$a['file']	= preg_replace('/^.*[0-9]{2}\\/(.*)$/', '$1', $a['file']);\n\n	return $a;\n\n}\n\n\n\n\n/**\n* @param	catID		categoryID\n* @param	limit		number of posts\n* @param	thumbdim	size limit of thumb\n* @param	width		limits thumbdim by width if true. othewise limits by height\n* @param	radimg		if true and multiple images are retrieved, return a random one. \n*						otherwise only the first is returned\n* @param	suffix		wordpress suffix\n*\n*/\nfunction pwp_ref( $args = NULL ){	\n\n	if ( is_int( $args ) ) {\n\n		$prms = array( 'posts_per_page' => $args );\n\n	} else if ( is_string( $args ) ) {\n\n		parse_str( $args, $prms );\n\n	} else {\n\n		$prms = $args;\n\n	}\n\n	$params = pwp_args( array(\n		'post_type' 		=> 'post',\n		'posts_per_page'	=> 5\n	), $prms );\n\n	$query 	= new WP_Query( $params );\n	\n	$p 		= array();\n	\n	if( count( $query->posts ) ) {\n\n		foreach( $query->posts as $post ) {\n	\n			$row = array(\n				'excerpt'	=> get_the_excerpt( $post->ID ), //pwp_excerpt($row['content']);\n				'url'		=> get_permalink( $post->ID ),\n				'title'		=> get_the_title( $post->ID ),\n				'content'	=> get_the_content( $post->ID ),\n				'date'		=> get_the_date( $post->ID )\n			);\n\n			$row['html'] = \"<a href=\\\"\" . $row['url'] . \"\\\" title=\\\"\" . $row['title'] . \"\\\" class=\\\"ref title\\\">\" . $row['title'] . \"</a>\\n\";\n\n\n			$image = pwp_get_post_image( $post->ID, 'thumbnail');\n\n\n			if ( !$image ) {\n\n				preg_match_all('/(img|src)=(\"|\\')[^\"\\'>]+/i', get_the_content( $post->ID ), $matches);	//matches all img tags\n	\n				if(!empty($matches) && !empty($matches[0])) {\n\n					$src = preg_replace('/(img|src)(\"|\\'|=\"|=\\')(.*)/i',\"$3\", $matches[0]);	//retrieves src tags\n		\n					if(is_array($src)) {\n\n						$src = $src[0]; 										//in case of multiple urls\n				\n					}\n\n					$img = pwp_image_info( $src );\n\n					if($img){\n					\n						$row['img']	= $img['sizes'];\n					\n						if(!empty($img['sizes'])){\n						\n							foreach($row['img'] as &$r){ \n						\n								$r['src'] = $img['dir'] . $r['file']; \n						\n							}\n					\n						}				\n			\n						$image = array( isset($row['img']['thumbnail']) ? $row['img']['thumbnail']['src'] : $img['dir'] . $img['file'] );\n\n					}								\n\n				}\n		\n			}\n				\n			if ( $image ) {\n\n				$row['html']   .= \"<a href=\\\"$row[url]\\\" title=\\\"$row[title]\\\" class=\\\"ref img\\\"><img src=\\\"\" . $image[0] . \"\\\"/></a>\\n\";\n\n			}			\n	\n			$row['html']   .= \"<a href=\\\"$row[url]\\\" title=\\\"$row[title]\\\" class=\\\"ref excerpt\\\">$row[excerpt]</a>\\n\";\n\n			array_push($p, $row);\n	\n		}\n\n		return $p;\n	\n	}\n	\n	return false;\n\n}\n\n\n\nfunction pwp_excerpt($text, $n=55, $more='[...]'){\n	\n	$words = explode(' ', strip_tags($text), 55+1);\n	\n	if(count($words)>$n){\n		\n		array_pop($words);\n		\n		array_push($words,'[...]');\n	\n	}\n	\n	return implode(' ', $words);\n\n}\n?>\n",
 			"file": "pwp/php/functions/wp-refresh.php",
+			"file_size": 9982,
+			"file_write_time": 131086004330000000,
 			"settings":
 			{
 				"buffer_size": 9577,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test/wp-content/themes/ptheme/pwp/js/p.js",
-			"settings":
-			{
-				"buffer_size": 53867,
 				"line_ending": "Windows"
 			}
 		},
@@ -208,6 +203,14 @@
 			"settings":
 			{
 				"buffer_size": 720,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/wp-content/themes/ptheme/pwp/php/includes/js.php",
+			"settings":
+			{
+				"buffer_size": 3140,
 				"line_ending": "Windows"
 			}
 		},
@@ -224,14 +227,6 @@
 			"settings":
 			{
 				"buffer_size": 524,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test/wp-content/themes/ptheme/includes/nav.php",
-			"settings":
-			{
-				"buffer_size": 2884,
 				"line_ending": "Windows"
 			}
 		}
@@ -334,15 +329,19 @@
 	"expanded_folders":
 	[
 		"/C/Plura/dev/code/wp",
+		"/C/Plura/dev/code/wp/plugin",
+		"/C/Plura/dev/code/wp/plugin/core",
+		"/C/Plura/dev/code/wp/pwp",
 		"/C/Plura/dev/code/wp/test",
 		"/C/Plura/dev/code/wp/test/wp-content",
 		"/C/Plura/dev/code/wp/test/wp-content/themes",
-		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme",
-		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/includes"
+		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme"
 	],
 	"file_history":
 	[
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/pwp/functions.php",
+		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/includes/nav.php",
+		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/pwp/js/p.js",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/pwp/php/includes/js.php",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/pwp/init.php",
 		"/C/Plura/dev/code/wp/test/wp-content/plugins/babka/babka_custom_parties.php",
@@ -371,7 +370,6 @@
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/js/dev/modules/Contacts.js",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/js/dev/constants/BreakPoints.js",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/_content/head.dev.php",
-		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/includes/nav.php",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/css/colors.css",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/includes/content-header.php",
 		"/C/Plura/dev/code/wp/test/wp-content/themes/ptheme/archive.php",
@@ -468,8 +466,7 @@
 		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-admin/network/site-themes.php",
 		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-includes/shortcodes.php",
 		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_content/js/modules/checkout/services/Select.js",
-		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_lib/js/p.js",
-		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-includes/SimplePie/Restriction.php"
+		"/C/Plura/dev/sites/2013/ohmm/site/wp/wp-content/themes/plura_www_ohmm_pt/_lib/js/p.js"
 	],
 	"find":
 	{
@@ -646,7 +643,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -675,39 +672,11 @@
 						"translation.y": 5175.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/wp-content/themes/ptheme/pwp/js/p.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 53867,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53867,
-								53867
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1427.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "test/wp-content/themes/ptheme/functions.php",
 					"semi_transient": false,
 					"settings":
@@ -719,8 +688,8 @@
 						"selection":
 						[
 							[
-								536,
-								536
+								170,
+								170
 							]
 						],
 						"settings":
@@ -731,7 +700,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/wp-content/themes/ptheme/pwp/php/includes/js.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1494.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -757,10 +755,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -778,36 +776,6 @@
 							[
 								257,
 								257
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "test/wp-content/themes/ptheme/includes/nav.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2884,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1956,
-								1956
 							]
 						],
 						"settings":
@@ -908,9 +876,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "europa",
+		"last_filter": "ohmm",
 		"selected_items":
 		[
+			[
+				"ohmm",
+				"C:\\Plura\\dev\\sites\\2013\\ohmm\\ohmm.sublime-project"
+			],
+			[
+				"novaso",
+				"C:\\Plura\\dev\\sites\\2014\\novasotecma\\project.sublime-project"
+			],
 			[
 				"europa",
 				"C:\\Plura\\dev\\sites\\2016\\europa21\\project.sublime-project"
@@ -920,20 +896,12 @@
 				"C:\\Plura\\dev\\code\\apps\\showcase\\project.sublime-project"
 			],
 			[
-				"novaso",
-				"C:\\Plura\\dev\\sites\\2014\\novasotecma\\project.sublime-project"
-			],
-			[
 				"multifoto",
 				"C:\\Plura\\dev\\sites\\2015\\multifoto\\project.sublime-project"
 			],
 			[
 				"nov",
 				"C:\\Plura\\dev\\sites\\2014\\novasotecma\\project.sublime-project"
-			],
-			[
-				"ohmm",
-				"C:\\Plura\\dev\\sites\\2013\\ohmm\\ohmm.sublime-project"
 			],
 			[
 				"",
@@ -959,7 +927,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 368.0,
+	"side_bar_width": 498.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

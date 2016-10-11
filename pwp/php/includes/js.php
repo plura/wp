@@ -21,15 +21,13 @@ if ( function_exists('qtranxf_getLanguage') && preg_match("/\/" . qtranxf_getLan
 }
 
 
-
 /* taxonomies & categories */
-
 if ( is_tax() || is_category() ) {
-
 
 	$selected = array(
 		'id'		=> $wp_query->queried_object->term_id,
 		'name'		=> $wp_query->queried_object->name,
+		'slug'		=> $wp_query->queried_object->slug,
 		'taxonomy'	=> $wp_query->queried_object->taxonomy,
 		'type'		=> 'term',
 		'url'		=> get_term_link( $wp_query->queried_object->term_id, $wp_query->queried_object->taxonomy )
@@ -40,7 +38,8 @@ if ( is_tax() || is_category() ) {
 
 	$selected = array(
 		'id'		=> $wp_query->queried_object->ID,
-		'name'		=> $wp_query->queried_object->post_name,
+		'name'		=> $wp_query->queried_object->post_title,
+		'slug'		=> $wp_query->queried_object->post_name,
 		'type' 		=> $wp_query->queried_object->post_type,
 		'url'		=> get_permalink( $wp_query->queried_object->ID )
 	);
